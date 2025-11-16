@@ -1,12 +1,13 @@
-FROM node:20.15.0-alpine
+FROM node:18
 
 WORKDIR /app
 
-COPY package.json /app
+COPY package*.json ./
 
 RUN npm install
 
-COPY . /app
+# Copy ALL backend code (including updated index.js)
+COPY . .
 
 EXPOSE 8000
 
