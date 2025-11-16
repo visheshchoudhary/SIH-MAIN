@@ -6,10 +6,16 @@
     repo_version: "main"
 
   tasks:
+  
     - name: Update apt cache
       apt:
         update_cache: yes
 
+    - name: Run docker compose
+      shell: |
+        cd {{ project_dir }}
+        docker-compose up -d --build  
+        
     - name: Install dependencies
       apt:
         name:
