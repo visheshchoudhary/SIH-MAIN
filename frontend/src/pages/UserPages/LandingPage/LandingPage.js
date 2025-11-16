@@ -11,7 +11,7 @@ const LandingPage = () => {
       <div id="i119" className="card-container">
         
         <div id="i132" className="card">
-          <h2>Job Seeker or Student</h2>
+          <h2>Job Seeker or Studenttt</h2>
           <div>
           <p>Create new Account? <a href="/jobseeker/signup">Signup</a></p>
           <p>or</p>
