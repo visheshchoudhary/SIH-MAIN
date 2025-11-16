@@ -20,7 +20,8 @@ app.use(bodyparser.urlencoded({ extended: true }));
 
 
 app.use(cors({
-    origin : ["https://frontend-sih-swart.vercel.app"],
+    origin : ["http://13.48.104.214:3000",
+        "https://frontend-sih-swart.vercel.app"],
     methods: ['GET', 'POST', 'PUT', 'DELETE','PATCH'],
     credentials : true
 }
@@ -43,11 +44,11 @@ app.post('/webhook', (req, res) => {
 
   
 connectDB().then(()=>{
-    app.listen(  process.env.PORT  || 8000,"0.0.0.0",()=>{
+    app.listen(process.env.PORT || 8000, "0.0.0.0", ()=>{
         console.log(process.env.FRONTEND_URL);
         console.log(process.env.HOST);
         console.log("connected to DB");
         console.log(`server running in http://0.0.0.0:${process.env.PORT || 8000}`);
-    })
+    });
 });
 
